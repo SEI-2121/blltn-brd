@@ -5,6 +5,6 @@
 
 [[redirects]]
   from = "/*"
-  to = "/"
+  to = "/build/index.html"
   status = 200
 
