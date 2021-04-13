@@ -1,10 +1,10 @@
 [build]
   command = "npm run build"
   functions = "netlify/functions"
-  publish = "blltn-brd"
+  publish = "build"
 
 [[redirects]]
   from = "/*"
-  to = "/blltn-brd/build/index.html"
+  to = "/build/index.html"
   status = 200
 
