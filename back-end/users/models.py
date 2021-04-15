@@ -12,7 +12,7 @@ class User(models.Model):
 
 
 class Link(models.Model):
-  user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='users')
+  user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_link')
   link_name = models.CharField(max_length=120)
   link_url = models.URLField()
 
@@ -21,7 +21,7 @@ class Link(models.Model):
 
 class Project(models.Model):
   project_name = models.CharField(max_length=120)
-  user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='users')
+  user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_project')
   description = models.CharField(max_length=255, null=True)
   projects_website = models.URLField(null=True)
   source_code = models.URLField(null=True)
@@ -31,7 +31,7 @@ class Project(models.Model):
     return self.project_name
 
 class Screenshot(models.Model):
-  project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='users')
+  project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='project_screenshot')
   screenshot_name = models.CharField(max_length=120)
   screenshot = models.URLField()
 
