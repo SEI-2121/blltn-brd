@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom"
+import Navigation from '../../components/Common/Navigation/Navigation'
 
 export default function App() {
   return (
@@ -23,7 +24,7 @@ export default function App() {
             </li>
           </ul>
         </nav>
-
+          <Navigation />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
