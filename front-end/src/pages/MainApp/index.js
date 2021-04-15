@@ -1,5 +1,6 @@
 import React from "react"
 import './style.css'
+import UserDetail from '../UserDetail'
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,6 +34,9 @@ export default function App() {
           </Route>
           <Route path="/users">
             <Users />
+          </Route>
+          <Route path="/user/:id">
+            <UserDetail/>
           </Route>
           <Route path="/">
             <Home />
