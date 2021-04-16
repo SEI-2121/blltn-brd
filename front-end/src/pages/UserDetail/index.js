@@ -3,6 +3,7 @@ import './style.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import ProjectIndex from '../../components/Users/ProjectIndex/index.js'
 
 
 export default class UserDetail extends Component {
@@ -26,10 +27,7 @@ export default class UserDetail extends Component {
           </Row>
           <Container className='projectContainer'>
             <Row>
-              <Col>project search bar</Col>
-            </Row>
-            <Row>
-              <Col>user project index</Col>
+              <Col><ProjectIndex /></Col>
             </Row>
           </Container>
         </Container>
