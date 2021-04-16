@@ -1,11 +1,12 @@
 import React from "react"
+import './style.css'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom"
-import Navigation from '../../components/Common/Navigation/Navigation'
+import Navigation from '../../components/Common/Navbar'
 
 export default function App() {
   return (
