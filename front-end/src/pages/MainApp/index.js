@@ -62,7 +62,3 @@ function About() {
 function Users() {
   return <h2>Users</h2>
 }
-
-function Testing() {
-  return <h2>Testing</h2>
-}
