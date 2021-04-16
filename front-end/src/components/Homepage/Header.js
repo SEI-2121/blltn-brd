@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div>
       <div class="whole">
-        <Jumbotron class="">
+        <Jumbotron>
           <div>
             <img src="https://user-images.githubusercontent.com/3163892/114476406-c4ef2d80-9bbf-11eb-9c7a-e1eea57d1a27.png"></img>
           </div>
