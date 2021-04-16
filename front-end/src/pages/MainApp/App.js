@@ -1,15 +1,21 @@
-import React from "react"
+import React, { Component } from "react"
+import { render } from "react-dom";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom"
+import Header from "./Header.js"
+
+
 
 export default function App() {
+
   return (
     <Router>
       <div>
+      <Header />
         <nav>
           <ul>
             <li>
@@ -41,6 +47,7 @@ export default function App() {
     </Router>
   );
 }
+
 
 function Home() {
   return <h2>Home</h2>
