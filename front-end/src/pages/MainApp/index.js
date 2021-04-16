@@ -1,6 +1,7 @@
 import React from "react"
 import './style.css'
 import UserDetail from '../UserDetail'
+import Testing from '../Testing'
 import {
   BrowserRouter as Router,
   Switch,
