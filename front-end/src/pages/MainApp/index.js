@@ -6,7 +6,7 @@ import {
   Switch,
   Route,
   Link
-} from "react-router-dom"
+} from 'react-router-dom'
 
 export default function App() {
   return (
@@ -15,36 +15,40 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to='/'>Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to='/about'>About</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to='/users'>Users</Link>
             </li>
+            <li>
+              <Link to='/testing'>Testing</Link>
+              </li>
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
+          <Route path='/about'>
             <About />
           </Route>
-          <Route path="/users">
+          <Route path='/users'>
             <Users />
           </Route>
-          <Route path="/user/:id">
+          <Route path='/user/:id'>
             <UserDetail/>
           </Route>
-          <Route path="/">
+          <Route path='/testing'>
+            <Testing/>
+          </Route>
+          <Route path='/'>
             <Home />
           </Route>
         </Switch>
       </div>
     </Router>
-  );
+  )
 }
 
 function Home() {
@@ -57,4 +61,8 @@ function About() {
 
 function Users() {
   return <h2>Users</h2>
+}
+
+function Testing() {
+  return <h2>Testing</h2>
 }
