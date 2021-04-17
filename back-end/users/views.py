@@ -25,7 +25,7 @@ class ScreenshotList(ListCreateAPIView):
     queryset = Screenshot.objects.all()
     serializer_class = ScreenshotSerializer
 
-class ScreenshootDetail(RetrieveUpdateDestroyAPIView):
+class ScreenshotDetail(RetrieveUpdateDestroyAPIView):
     queryset = Screenshot.objects.all()
     serializer_class = ScreenshotSerializer
 
