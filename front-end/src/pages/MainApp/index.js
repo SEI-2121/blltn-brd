@@ -4,6 +4,7 @@ import UserDetail from "../UserDetail";
 import Testing from "../Testing";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "../../components/Homepage/Header.js";
+import HomePage from '../../components/Homepage/index.js';
 
 export default function App() {
   return (
@@ -42,7 +43,7 @@ export default function App() {
               <Testing />
             </Route>
             <Route path="/">
-              <Home />
+              <HomePage />
             </Route>
           </Switch>
         </div>
@@ -51,9 +52,7 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
+
 
 function About() {
   return <h2>About</h2>;
