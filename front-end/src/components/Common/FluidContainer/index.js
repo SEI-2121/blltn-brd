@@ -1,16 +1,16 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
-function index() {
+function ContainerWrapper(props) {
     return (
 
-        <Container fluid>
+        <Container >
             <Row>
-                <Col>1 of 1</Col>
+                <Col>{props.children}</Col>
             </Row>
         </Container>
 
     )
 }
 
-export default index
+export default ContainerWrapper
