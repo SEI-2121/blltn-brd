@@ -4,6 +4,8 @@ import UserDetail from "../UserDetail";
 import Testing from "../Testing";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "../../components/Homepage/Header.js";
+import About from "./About.js";
+
 
 export default function App() {
   return (
@@ -53,10 +55,6 @@ export default function App() {
 
 function Home() {
   return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
 }
 
 function Users() {
