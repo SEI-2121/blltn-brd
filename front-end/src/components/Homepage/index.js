@@ -2,6 +2,8 @@ import React from 'react'
 import Signup from './Signup'
 import Login from './Login'
 import Header from './Header'
+import Navbar from '../Navbar'
+
 
 export default function HomePage() {
     return (
@@ -9,8 +11,8 @@ export default function HomePage() {
         <Header />
         <Login />
         <Signup />  
-          </div>
+        <Navbar />
+        </div>
   
-            
     )
   }
