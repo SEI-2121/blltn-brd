@@ -9,29 +9,21 @@ import ProjectIndex from '../../components/Users/ProjectIndex/index.js'
 export default class UserDetail extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <h2 className='nav'>Nav</h2>
-        </div>
-        <Container className="userContainer">
-          <Row>
-            <Col className="userCard">user card</Col>
-          </Row>
-          <Row>
-            <Col className="social">social links</Col>
-          </Row>
-        </Container>
-        <Container>
-          <Row>
-            <Col className='bio'>Bio</Col>
-          </Row>
-          <Container className='projectContainer'>
-            <Row>
-              <Col><ProjectIndex /></Col>
-            </Row>
-          </Container>
-        </Container>
-      </div>
+
+      <Container className="userContainer">
+        <Row>
+          <Col>
+            <Row className="userCard">User card</Row>
+            <Row className="social">Social Links</Row>
+          </Col>
+          <Col>
+            <Row className="bio">Bio</Row>
+            <Row className="projectContainer"><ProjectIndex /></Row>
+          </Col>
+        </Row>
+      </Container>
+
+
     )
   }
 }
