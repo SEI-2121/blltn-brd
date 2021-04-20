@@ -8,13 +8,13 @@ import Navbar from '../../components/Common/Navbar';
 import Header from '../../components/Common/Homepage/Header.js';
 import About from '../About/index.js';
 
-export default function App() {
+export default function App(props) {
   return (
     <div>
       <Router>
         <div>
           <Header />
-          <Navbar />
+          <Route path="/" component={Navbar}/>
            <Switch>
             <Route path="/about">
               <About />
