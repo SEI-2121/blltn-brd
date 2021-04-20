@@ -1,15 +1,18 @@
 import React from 'react'
+import { Container, Col, Row } from 'react-bootstrap';
 import Signup from '../../components/Common/Homepage/Signup'
-import Login from '../../components/Common/Homepage/Login.js'
 
 
 
 export default function HomePage() {
-    return (
-      <div>
-        <Login />
-        <Signup />
-        </div>
-
-    )
-  }
+  return (
+    <Container>
+      <Row>
+        <Col><h1>Sign Up</h1></Col>
+      </Row>
+      <Row>
+        <Col><Signup /></Col>
+      </Row>
+    </Container>
+  )
+}
