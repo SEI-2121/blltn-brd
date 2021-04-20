@@ -4,6 +4,7 @@ import UserDetail from "../UserDetail";
 import Testing from "../Testing";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from '../../components/Homepage/index.js';
+import Navbar from '../../components/Common/Navbar';
 
 export default function App() {
   return (
@@ -11,24 +12,8 @@ export default function App() {
 
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/users">Users</Link>
-              </li>
-              <li>
-                <Link to="/testing">Testing</Link>
-              </li>
-            </ul>
-          </nav>
-
-          <Switch>
+          <Navbar />
+           <Switch>
             <Route path="/about">
               <About />
             </Route>

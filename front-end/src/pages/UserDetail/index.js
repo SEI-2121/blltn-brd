@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import ProjectIndex from '../../components/Users/ProjectIndex/index.js'
+import LinkTree from '../../components/LinkTree/index.js'
 
 
 export default class UserDetail extends Component {
@@ -14,7 +15,7 @@ export default class UserDetail extends Component {
         <Row>
           <Col>
             <Row className="userCard">User card</Row>
-            <Row className="social">Social Links</Row>
+            <Row className="social"><LinkTree /></Row>
           </Col>
           <Col>
             <Row className="bio">Bio</Row>
