@@ -4,7 +4,7 @@ import UserDetail from "../UserDetail";
 import Testing from "../Testing";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Header from "../../components/Homepage/Header.js";
-import About from "./About.js";
+import About from "../About/index.js";
 
 
 export default function App() {
