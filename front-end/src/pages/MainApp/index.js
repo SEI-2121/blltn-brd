@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import UserDetail from "../UserDetail";
 import Testing from "../Testing";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from '../Homepage/index.js';
 import Navbar from '../../components/Common/Navbar';
 import Header from '../../components/Common/Homepage/Header.js';
