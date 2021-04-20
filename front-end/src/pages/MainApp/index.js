@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from '../Homepage/index.js';
 import Navbar from '../../components/Common/Navbar';
 import Header from '../../components/Common/Homepage/Header.js';
+import About from '../About/index.js';
 
 export default function App() {
   return (
@@ -38,10 +39,6 @@ export default function App() {
 }
 
 
-
-function About() {
-  return <h2>About</h2>;
-}
 
 function Users() {
   return <h2>Users</h2>;
