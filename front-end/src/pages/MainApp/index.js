@@ -8,7 +8,7 @@ import HomePage from '../../components/Homepage/index.js';
 export default function App() {
   return (
     <div>
-     
+
       <Router>
         <div>
           <nav>
