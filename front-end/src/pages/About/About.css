@@ -1,0 +1,23 @@
+.container {
+    text-align: center;
+    
+    }
+    
+    h3 {
+        color: gray;
+    }
+    
+    h5 {
+        padding: 40px;
+        line-height: 200%;
+    }
+    
+    .header-color {
+        color: #009900;
+        font-weight: bold;
+        font-size: 45px;
+    }
+    
+    hr {
+        padding: 20px 0px 0px 0px;
+    }
