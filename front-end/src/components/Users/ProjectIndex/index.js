@@ -17,9 +17,9 @@ export default class ProjectIndex extends Component {
           <Row>
             <Col>
               <Navbar bg="light" expand="sm">
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand href="#home">Search My Projects</Navbar.Brand>
                 <Form inline>
-                  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                  <FormControl type="text" placeholder="Project Name" className="mr-sm-2" />
                   <Button variant="outline-success">Search</Button>
                 </Form>
               </Navbar>
