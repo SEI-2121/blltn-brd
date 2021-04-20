@@ -34,12 +34,12 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <Form>
+                <Form className="login-signup">
                     <Form.Group controlId="email">
                         <Form.Label>EMAIL</Form.Label> 
                         <br />
                         <br />
-                        <Form.Control autoFocus type="email" placeholder="johndoe@gmail.com" onChange={this.handleEmail}/>
+                        <Form.Control type="email" placeholder="johndoe@gmail.com" onChange={this.handleEmail}/>
                     </Form.Group>
                     <br />
                     <Form.Group controlId="password">
