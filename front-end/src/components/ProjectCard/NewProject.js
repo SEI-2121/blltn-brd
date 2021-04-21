@@ -9,7 +9,8 @@ class NewProject extends Component {
             description: "",
             website: "",
             source: "",
-            valid: true
+            valid: true,
+            newProject: {}
         }
     }
     handleName = (e) => {
@@ -26,13 +27,25 @@ class NewProject extends Component {
     }
 
     createProject = (e) => {
-        e.preventDefault();
+        e.preventDefault()
+        const newProject = this.state.newProject
+        const requestOptions = {
+          method: "POST",
+          mode: 'cors',
+          headers: {
+             'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(newProject)
+       }
+       fetch("https://blltn-brd.herokuapp.com/", requestOptions)
+       .then(resp=>resp.json())
+       .then(returnedProject=>{
         if (this.valid === true) {
-            alert("Project Created");
-            this.setState();
+            alert("Project Created")
+            this.setState({project: [...this.state.project, returnedProject]})
         }
+      })
     }
-
     render() {
         return (
             <div>
