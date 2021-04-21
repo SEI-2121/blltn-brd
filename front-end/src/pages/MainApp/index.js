@@ -7,6 +7,7 @@ import HomePage from '../Homepage/index.js';
 import Navbar from '../../components/Common/Navbar';
 import Header from '../../components/Common/Homepage/Header.js';
 import About from '../About/index.js';
+import EditProject from "../EditProjects";
 
 export default function App(props) {
   return (
@@ -27,6 +28,9 @@ export default function App(props) {
             </Route>
             <Route path="/testing">
               <Testing />
+            </Route>
+            <Route path="/editproject">
+              <EditProject />
             </Route>
             <Route path="/">
               <HomePage />
