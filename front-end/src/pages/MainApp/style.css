@@ -46,12 +46,17 @@ body{
 
 .form-group {
   width: 250px;
-  margin: 0 auto;
 }
 
-.login-signup {
+.form-label {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.login-signup, .create-project {
   text-align: center;
-  margin: 25px;
+  width: 250px;
+  margin: 0 auto;
   padding: 25px;
   width: 300px;
   display: flex;
@@ -64,9 +69,13 @@ body{
   line-height: 1;
 }
 
-.form-label {
-  margin: 0 auto;
-  padding: 10px;
+.create-project {
+  width: 50rem;
+}
+
+.newProjectForm {
+  width: 40rem;
+  text-align: left;
 }
 
 .btn.btn-outline-light {
