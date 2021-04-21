@@ -46,12 +46,17 @@ body{
 
 .form-group {
   width: 250px;
+}
+
+.form-label {
   margin: 0 auto;
+  padding: 10px;
 }
 
 .login-signup {
   text-align: center;
-  margin: 25px;
+  width: 250px;
+  margin: 0 auto;
   padding: 25px;
   width: 300px;
   display: flex;
@@ -62,11 +67,6 @@ body{
   border-radius: 5px;
   background-image: linear-gradient(#FFFFFF, #C8C8C8);
   line-height: 1;
-}
-
-.form-label {
-  margin: 0 auto;
-  padding: 10px;
 }
 
 .btn.btn-outline-light {

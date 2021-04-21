@@ -8,6 +8,7 @@ import Navbar from '../../components/Common/Navbar';
 import Header from '../../components/Common/Homepage/Header.js';
 import About from '../About/index.js';
 import LoginPage from "../Login/index.js"
+import NewProjectPage from "../NewProject/index.js"
 
 export default function App(props) {
   return (
@@ -28,6 +29,9 @@ export default function App(props) {
             </Route>
             <Route path="/testing">
               <Testing />
+            </Route>
+            <Route path="/projects/new">
+              <NewProjectPage />
             </Route>
             <Route path="/login">
               <LoginPage />
