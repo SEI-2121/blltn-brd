@@ -35,11 +35,11 @@ class Signup extends Component {
                 method: 'POST',
                 mode: 'cors',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ [e.target.name]: e.target.value })
+                body: JSON.stringify(this.state)
             };
             fetch('https://blltn-brd.herokuapp.com/user', requestOptions)
                 .then(response => response.json())
-                .then(data => this.setState({ [e.target.name]: e.target.value }))
+                .then(data => console.log(data))
         }
     }
 
