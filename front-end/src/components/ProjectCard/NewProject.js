@@ -9,8 +9,7 @@ class NewProject extends Component {
             description: "",
             website: "",
             source: "",
-            technologiesUsed: "",
-            valid: true
+            technologiesUsed: ""
         }
     }
 
@@ -26,11 +25,11 @@ class NewProject extends Component {
             method: 'POST',
             mode: 'cors',
             headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify({ [e.target.name]: e.target.value })
+            body: JSON.stringify( this.state )
         };
         fetch('https://blltn-brd.herokuapp.com/projects', requestOptions)
             .then(response => response.json())
-            .then(data => this.setState({ [e.target.name]: e.target.value }))
+            .then(data => console.log(data))
     }
 
     render() {
