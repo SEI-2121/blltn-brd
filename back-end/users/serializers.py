@@ -11,13 +11,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ['id', 'username', 'projects']
 
-
 class LinkSerializer(HyperlinkedModelSerializer):
 
     class Meta:
         model = Link
         fields = ('link_name', 'link_url')
-
 
 class ProjectSerializer(HyperlinkedModelSerializer):
     project_screenshot = serializers.HyperlinkedRelatedField(
@@ -29,12 +27,7 @@ class ProjectSerializer(HyperlinkedModelSerializer):
         model = Project
         fields = ('user', 'project_name', 'description', 'projects_website',
                   'source_code', 'technologies_used', 'project_screenshot')
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
-
-
+   
 class ScreenshotSerializer(HyperlinkedModelSerializer):
 
     class Meta:
