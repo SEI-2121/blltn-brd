@@ -9,33 +9,38 @@ class Signup extends Component {
             email: "",
             password: "",
             passwordConfirm: "",
-            errors: []
         }
     }
 
     handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value})
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     checkSignup = (e) => {
         e.preventDefault();
-        if (input["password"] != input["passwordConfirm"]) {
-            isValid = false;
-            errors["password"] = "Passwords don't match."
+        if (this.state.passwordConfirm !== this.state.password) {
+            // this.setState({valid: false})
+            alert("Passwords do not match.")
+        } else {
+            this.createUser()
         }
     }
 
     createUser = (e) => {
         e.preventDefault()
-        const requestOptions = {
-            method: 'POST',
-            mode: 'cors',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify({ [e.target.name]: e.target.value })
-        };
-        fetch('https://blltn-brd.herokuapp.com/user', requestOptions)
-            .then(response => response.json())
-            .then(data => this.setState({ [e.target.name]: e.target.value }))
+        if (this.state.passwordConfirm !== this.state.password) {
+            alert("Passwords do not match.")
+        } else {
+            const requestOptions = {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ [e.target.name]: e.target.value })
+            };
+            fetch('https://blltn-brd.herokuapp.com/user', requestOptions)
+                .then(response => response.json())
+                .then(data => this.setState({ [e.target.name]: e.target.value }))
+        }
     }
 
     render() {
@@ -43,26 +48,26 @@ class Signup extends Component {
             <div>
                 <Form className="login-signup">
                     <Form.Group controlId="username">
-                        <Form.Label>USERNAME</Form.Label> 
-                        <Form.Control name="username" type="text" placeholder="johndoe13" onChange={this.handleChange}/>
+                        <Form.Label>USERNAME</Form.Label>
+                        <Form.Control name="username" type="text" placeholder="johndoe13" onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group controlId="email">
-                        <Form.Label>EMAIL</Form.Label> 
+                        <Form.Label>EMAIL</Form.Label>
                         <br />
-                        <Form.Control name="email" type="email" placeholder="johndoe@gmail.com" onChange={this.handleChange}/>
+                        <Form.Control name="email" type="email" placeholder="johndoe@gmail.com" onChange={this.handleChange} />
                     </Form.Group>
                     <br />
                     <Form.Group controlId="password">
                         <Form.Label>PASSWORD</Form.Label>
                         <br />
-                        <Form.Control name="password" type="password" placeholder="password" onChange={this.handleChange}/>
+                        <Form.Control name="password" type="password" placeholder="password" onChange={this.handleChange} />
                     </Form.Group>
                     <br />
                     <Form.Group controlId="passwordConfirm">
-                        <Form.Control name="passwordConfirm" type="password" placeholder="re-type password" onChange={this.handleChange}/>
+                        <Form.Control name="passwordConfirm" type="password" placeholder="re-type password" onChange={this.handleChange} />
                     </Form.Group>
                     <br />
-                    <Button variant="primary" type="submit" onClick={this.checkSignup}>
+                    <Button variant="primary" type="submit" onClick={this.createUser}>
                         SIGN UP
                     </Button>
                 </Form>
