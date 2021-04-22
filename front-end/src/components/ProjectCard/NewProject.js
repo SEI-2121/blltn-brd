@@ -9,53 +9,62 @@ class NewProject extends Component {
             description: "",
             website: "",
             source: "",
+            technologiesUsed: "",
             valid: true
         }
     }
-    handleName = (e) => {
-        this.setState({name: e.target.value});
-    }
-    handleDescription = (e) => {
-        this.setState({description: e.target.value});
-    }
-    handleWebsite = (e) => {
-        this.setState({website: e.target.value});
-    }
-    handleSource = (e) => {
-        this.setState({source: e.target.value});
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     createProject = (e) => {
-        e.preventDefault();
-        if (this.valid === true) {
-            alert("Project Created");
-            this.setState();
-        }
+        e.preventDefault()
+        const requestOptions = {
+            method: 'POST',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify({ [e.target.name]: e.target.value })
+        };
+        fetch('https://blltn-brd.herokuapp.com/projects', requestOptions)
+            .then(response => response.json())
+            .then(data => this.setState({ [e.target.name]: e.target.value }))
     }
 
     render() {
         return (
             <div>
                 <Form className="create-project">
+                    <Form.Group className="newProjectForm" controlId="projectUser">
+                        <Form.Label>User</Form.Label>
+                        <Form.Control type="text" readOnly defaultValue="logged in username here" />
+                    </Form.Group>
                     <Form.Group className="newProjectForm" controlId="projectName">
-                        <Form.Label>Project Name</Form.Label> 
+                        <Form.Label>Project Name</Form.Label>
                         <br />
-                        <Form.Control type="email" placeholder="The Habadashery" onChange={this.handleName}/>
+                        <Form.Control name="name" as="textarea" placeholder="The Habadashery" onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group className="newProjectForm" controlId="projectDescription">
                         <Form.Label>Description</Form.Label>
                         <br />
-                        <Form.Control as="textarea" rows={3} placeholder="The Habadashery is your next stop for men's ties... or something." onChange={this.handleDescription}/>
+                        <Form.Control name="description" as="textarea" rows={3} placeholder="The Habadashery is your next stop for men's ties... or something." onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group className="newProjectForm" controlId="projectWebsite">
                         <Form.Label>Website URL</Form.Label>
                         <br />
-                        <Form.Control as="textarea" rows={1} placeholder="https://thehabadashery.com" onChange={this.handleWebsite}/>
+                        <Form.Control name="website" as="textarea" rows={1} placeholder="https://thehabadashery.com" onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group className="newProjectForm" controlId="projectSource">
                         <Form.Label>Source Code</Form.Label>
                         <br />
-                        <Form.Control as="textarea" rows={1} placeholder="https://github.com/username/repository" onChange={this.handleSource}/>
+                        <Form.Control name="source" as="textarea" rows={1} placeholder="https://github.com/username/repository" onChange={this.handleChange} />
+                    </Form.Group>
+                    <Form.Group className="newProjectForm" controlId="projectTech">
+                        <Form.Label>Technologies Used</Form.Label>
+                        <br />
+                        <Form.Control name="technologiesUsed" as="textarea" rows={1} placeholder="uhhhh" onChange={this.handleChange} />
                     </Form.Group>
                     <Button variant="primary" type="submit" onClick={this.createProject}>
                         CREATE PROJECT
