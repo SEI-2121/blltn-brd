@@ -1,0 +1,19 @@
+.create-project {
+    text-align: center;
+    width: 50rem;
+    margin: 0 auto;
+    padding: 25px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #C8C8C8;
+    border-radius: 5px;
+    background-image: linear-gradient(#FFFFFF, #C8C8C8);
+    line-height: 1;
+}
+  
+.newProjectForm {
+    text-align: left;
+}
