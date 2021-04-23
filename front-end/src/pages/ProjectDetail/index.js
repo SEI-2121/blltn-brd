@@ -39,15 +39,10 @@ export default class ProjectDetail extends Component {
                   <Button variant="outline-primary">Back to Projects</Button>{" "}
                 </Link>
               </Row>
-              {/* <Row className="social">
-                <LinkTree />
-              </Row> */}
             </Col>
             <Col>
               <Row className="bio">Bio</Row>
               <Row className="projectContainer">
-                
-                {/* <ProjectIndex /> */}
                 <h1>Project Name</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
@@ -67,20 +62,6 @@ export default class ProjectDetail extends Component {
             </Col>
           </Row>
         </Container>
-
-        {/* <Container>
-          <Row>
-            <Col xs={6} md={4}></Col>
-          </Row>
-        </Container> */}
-        <>
-          {/* <Link to="/user/testingpath">Username</Link>
-          <Link to="/user/testingpath">
-            <ListGroup className="list-group-flush">
-              <ListGroupItem>Location: Anywhere, USA</ListGroupItem>
-            </ListGroup>
-            <Button variant="outline-primary">Back to Projects</Button>{" "}
-          </Link> */}
         </>
       </div>
     );
