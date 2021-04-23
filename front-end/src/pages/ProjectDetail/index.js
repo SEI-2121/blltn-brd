@@ -1,11 +1,5 @@
 import React, { Component } from "react";
 import {
-  CardDeck,
-  Card,
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
   Button,
   Container,
   Row,
@@ -16,8 +10,6 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./style.css";
-import ProjectIndex from "../../components/Users/ProjectIndex/index.js";
-import LinkTree from "../../components/LinkTree/index.js";
 
 export default class ProjectDetail extends Component {
   render() {
