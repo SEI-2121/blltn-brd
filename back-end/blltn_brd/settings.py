@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["still-lowlands-68855.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -88,17 +88,30 @@ WSGI_APPLICATION = 'blltn_brd.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 SECRET_KEY = env("SECRET_KEY")
+
 DATABASES = {
-    'default': {
-        'ENGINE': "django.db.backends.postgresql_psycopg2",
-        'NAME': env("DATABASE_NAME"),
-        'USER': env("DATABASE_USER"),
-        'PASSWORD': env("DATABASE_PASSWORD"),
-        'HOST': env("DATABASE_HOST"),
-        'PORT': env("DATABASE_PORT"),
-    }
+    'default': {}
 }
 
+
+
+if env("PY_ENV") == "development":
+    DATABASES = {
+        'default': {
+            'ENGINE': "django.db.backends.postgresql_psycopg2",
+            'NAME': env("DATABASE_NAME"),
+            'USER': env("DATABASE_USER"),
+            'PASSWORD': env("DATABASE_PASSWORD"),
+            'HOST': env("DATABASE_HOST"),
+            'PORT': env("DATABASE_PORT"),
+        }
+    }
+elif env("PY_ENV") == "test":
+    import dj_database_url
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
+else:
+    print("set PY_ENV as an environment variable")
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -146,3 +159,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES' : ('rest_framework_simplejwt.authentication.JWTAuthentication',),
 }
+
+
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
