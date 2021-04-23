@@ -5,41 +5,41 @@ class Signup extends Component {
     constructor() {
         super();
         this.state = {
+            username: "",
             email: "",
             password: "",
             passwordConfirm: "",
-            valid: true,
         }
     }
 
-    handleUsername = (e) => {
-        this.setState({username: e.target.value});
-    }
-    handleEmail = (e) => {
-        this.setState({email: e.target.value});
-    }
-    handlePassword = (e) => {
-        this.setState({password: e.target.value});
-    }
-    handlePasswordConfirm= (e) => {
-        this.setState({passwordConfirm: e.target.value});
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value })
     }
 
-    checkPassword = (e) => {
+    checkSignup = (e) => {
         e.preventDefault();
-        let pwLength = this.state.password.length;
         if (this.state.passwordConfirm !== this.state.password) {
-            this.valid = false;
-            this.setState();
+            // this.setState({valid: false})
             alert("Passwords do not match.")
-        } else if (pwLength < 7) {
-            this.valid = false;
-            alert("Password must be at least 7 characters.")
-            this.setState();
-        } else if (this.state.passwordConfirm === this.state.password) {
-            this.valid = true;
-            alert("Account created.")
-            this.setState();
+        } else {
+            this.createUser()
+        }
+    }
+
+    createUser = (e) => {
+        e.preventDefault()
+        if (this.state.passwordConfirm !== this.state.password) {
+            alert("Passwords do not match.")
+        } else {
+            const requestOptions = {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(this.state)
+            };
+            fetch('https://blltn-brd.herokuapp.com/user', requestOptions)
+                .then(response => response.json())
+                .then(data => console.log(data))
         }
     }
 
@@ -47,23 +47,27 @@ class Signup extends Component {
         return (
             <div>
                 <Form className="login-signup">
+                    <Form.Group controlId="username">
+                        <Form.Label>USERNAME</Form.Label>
+                        <Form.Control name="username" type="text" placeholder="johndoe13" onChange={this.handleChange} />
+                    </Form.Group>
                     <Form.Group controlId="email">
-                        <Form.Label>EMAIL</Form.Label> 
+                        <Form.Label>EMAIL</Form.Label>
                         <br />
-                        <Form.Control type="email" placeholder="johndoe@gmail.com" onChange={this.handleEmail}/>
+                        <Form.Control name="email" type="email" placeholder="johndoe@gmail.com" onChange={this.handleChange} />
                     </Form.Group>
                     <br />
                     <Form.Group controlId="password">
                         <Form.Label>PASSWORD</Form.Label>
                         <br />
-                        <Form.Control type="password" placeholder="password" onChange={this.handlePassword}/>
+                        <Form.Control name="password" type="password" placeholder="password" onChange={this.handleChange} />
                     </Form.Group>
                     <br />
                     <Form.Group controlId="passwordConfirm">
-                        <Form.Control type="password" placeholder="re-type password" onChange={this.handlePasswordConfirm}/>
+                        <Form.Control name="passwordConfirm" type="password" placeholder="re-type password" onChange={this.handleChange} />
                     </Form.Group>
                     <br />
-                    <Button variant="primary" type="submit" onClick={this.checkPassword}>
+                    <Button variant="primary" type="submit" onClick={this.createUser}>
                         SIGN UP
                     </Button>
                 </Form>
