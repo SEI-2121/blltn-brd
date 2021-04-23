@@ -16,6 +16,7 @@ function Navigation() {
                     <Nav.Link href="/user">User</Nav.Link>
                     <Nav.Link href="/login">Login</Nav.Link>
                     <Nav.Link href="/testing">Testing</Nav.Link>
+                    
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />

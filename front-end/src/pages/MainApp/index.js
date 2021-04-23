@@ -8,6 +8,7 @@ import Navbar from '../../components/Common/Navbar';
 import Header from '../../components/Common/Homepage/Header.js';
 import About from '../About/index.js';
 import LoginPage from "../Login/index.js"
+import ProjectDetail from "../ProjectDetail";
 
 export default function App() {
   return (
@@ -31,6 +32,9 @@ export default function App() {
             </Route>
             <Route path="/login">
               <LoginPage />
+            </Route>
+            <Route path="/project/:id">
+              <ProjectDetail />
             </Route>
             <Route exact path="/">
               <HomePage />
