@@ -16,16 +16,6 @@ class Signup extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    checkSignup = (e) => {
-        e.preventDefault();
-        if (this.state.passwordConfirm !== this.state.password) {
-            // this.setState({valid: false})
-            alert("Passwords do not match.")
-        } else {
-            this.createUser()
-        }
-    }
-
     createUser = (e) => {
         e.preventDefault()
         if (this.state.passwordConfirm !== this.state.password) {
@@ -37,9 +27,9 @@ class Signup extends Component {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(this.state)
             };
-            fetch('https://blltn-brd.herokuapp.com/user', requestOptions)
+            fetch('https://blltn-brd.herokuapp.com/user/:id', requestOptions)
                 .then(response => response.json())
-                .then(data => console.log(data))
+                .then(createdUser => console.log(createdUser))
         }
     }
 
