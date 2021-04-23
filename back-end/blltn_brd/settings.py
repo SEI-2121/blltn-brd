@@ -92,7 +92,7 @@ SECRET_KEY = env("SECRET_KEY")
 DATABASES = {
     'default': {}
 }
-
+AUTH_USER_MODEL="users.User"
 
 
 if env("PY_ENV") == "development":
@@ -112,6 +112,8 @@ elif env("PY_ENV") == "test":
     DATABASES['default'].update(db_from_env)
 else:
     print("set PY_ENV as an environment variable")
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

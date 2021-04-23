@@ -3,7 +3,11 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-  pass
+  username = models.CharField(max_length=120)
+  bio = models.CharField(max_length=255, null=True)
+  profile_pic = models.URLField(null=True)
+  location = models.CharField(max_length=120, null=True)
+
 
 class Link(models.Model):
   link_name = models.CharField(max_length=120)
