@@ -62,7 +62,6 @@ export default class ProjectDetail extends Component {
             </Col>
           </Row>
         </Container>
-        </>
       </div>
     );
   }
