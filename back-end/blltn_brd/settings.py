@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["still-lowlands-68855.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["still-lowlands-68855.herokuapp.com", "localhost", '127.0.0.1']
 
 
 # Application definition
@@ -61,6 +61,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000',
+    
 )
 
 ROOT_URLCONF = 'blltn_brd.urls'
@@ -92,7 +93,7 @@ SECRET_KEY = env("SECRET_KEY")
 DATABASES = {
     'default': {}
 }
-AUTH_USER_MODEL="users.User"
+
 
 
 if env("PY_ENV") == "development":
@@ -166,3 +167,5 @@ REST_FRAMEWORK = {
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'users.User'
