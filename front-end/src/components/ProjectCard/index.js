@@ -13,7 +13,7 @@ export default class ProjectCard extends Component {
             <Card.Title>Project Title</Card.Title>
             <Card.Text>
               Some quick example text
-    </Card.Text>
+            </Card.Text>
             <Button variant="primary">Go To Proj</Button>
           </Card.Body>
         </Card>
