@@ -10,7 +10,7 @@ export default function NewProjectPage() {
                 <Col><h1>New Project</h1></Col>
             </Row>
             <Row>
-                <Col><NewProject /></Col>
+                <Col><NewProject {...props} /></Col>
             </Row>
         </Container>
     )

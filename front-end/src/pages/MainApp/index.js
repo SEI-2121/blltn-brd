@@ -35,9 +35,7 @@ export default function App(props) {
             <Route path="/editproject">
               <EditProject />
             </Route>
-            <Route path="/projects/new">
-              <NewProjectPage />
-            </Route>
+            <Route path="/projects/new" component={NewProjectPage}/>
             <Route path="/login">
               <LoginPage />
             </Route>
