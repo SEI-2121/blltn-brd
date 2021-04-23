@@ -9,6 +9,7 @@ import Header from '../../components/Common/Homepage/Header.js';
 import About from '../About/index.js';
 import EditProject from "../EditProjects";
 import LoginPage from "../Login/index.js"
+import ProjectDetail from "../ProjectDetail";
 import NewProjectPage from "../NewProject/index.js"
 
 
@@ -38,6 +39,9 @@ export default function App(props) {
             <Route path="/projects/new" component={NewProjectPage}/>
             <Route path="/login">
               <LoginPage />
+            </Route>
+            <Route path="/project/:id">
+              <ProjectDetail />
             </Route>
             <Route exact path="/">
               <HomePage />

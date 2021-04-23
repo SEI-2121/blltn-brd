@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import './style.css'
+import React, { Component } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import "./style.css";
+import { Link } from "react-router-dom";
 
 export default class ProjectCard extends Component {
   render() {
     return (
       <div>
-        <Card style={{ width: '5rem' }}>
+        <Card style={{ width: "5rem" }}>
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
             <Card.Title>Project Title</Card.Title>
@@ -18,6 +19,6 @@ export default class ProjectCard extends Component {
           </Card.Body>
         </Card>
       </div>
-    )
+    );
   }
 }
