@@ -12,10 +12,10 @@ export default class ProjectCard extends Component {
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
             <Card.Title>Project Title</Card.Title>
-            <Card.Text>Some quick example text</Card.Text>
-            <Link to="/project/:id" >
-              <Button variant="primary">Go To Proj</Button>
-            </Link>
+            <Card.Text>
+              Some quick example text
+            </Card.Text>
+            <Button variant="primary">Go To Proj</Button>
           </Card.Body>
         </Card>
       </div>

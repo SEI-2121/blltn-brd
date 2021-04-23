@@ -1,3 +1,28 @@
+#navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+#logo-container{
+  display: flex;
+  align-items: center;
+}
+
 .color {
   background-color: #009900;
 }
+
+#text-left {
+  text-align: left;
+}
+h3 #home-nav {
+  width: 100%;
+  text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+

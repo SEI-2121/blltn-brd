@@ -7,16 +7,19 @@ import HomePage from '../Homepage/index.js';
 import Navbar from '../../components/Common/Navbar';
 import Header from '../../components/Common/Homepage/Header.js';
 import About from '../About/index.js';
+import EditProject from "../EditProjects";
 import LoginPage from "../Login/index.js"
 import ProjectDetail from "../ProjectDetail";
+import NewProjectPage from "../NewProject/index.js"
 
-export default function App() {
+
+export default function App(props) {
   return (
     <div>
       <Router>
         <div>
           <Header />
-          <Navbar />
+          <Route path="/" component={Navbar}/>
            <Switch>
             <Route path="/about">
               <About />
@@ -30,6 +33,10 @@ export default function App() {
             <Route path="/testing">
               <Testing />
             </Route>
+            <Route path="/editproject">
+              <EditProject />
+            </Route>
+            <Route path="/projects/new" component={NewProjectPage}/>
             <Route path="/login">
               <LoginPage />
             </Route>
