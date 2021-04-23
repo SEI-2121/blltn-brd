@@ -20,17 +20,20 @@ class NewProject extends Component {
     }
 
     createProject = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const requestOptions = {
-            method: 'POST',
-            mode: 'cors',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify( this.state )
-        };
-        fetch('https://blltn-brd.herokuapp.com/projects', requestOptions)
-            .then(response => response.json())
-            .then(data => console.log(data))
-    }
+            method: "POST",
+            mode: "cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(this.state),
+        }
+            .then((resp) => resp.json())
+            .then((returnedProject) => {
+                fetch("http://localhost:3000/projects/", requestOptions);
+                alert("Project Created");
+                this.setState({ project: [...this.state.project, returnedProject] });
+            });
+    };
 
     render() {
         return (
