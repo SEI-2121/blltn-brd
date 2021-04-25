@@ -1,4 +1,5 @@
 import React from 'react'
+import './FluidContainer/style.css'
 import { Container, Row, Col } from 'react-bootstrap'
 
 function ContainerWrapper(props) {
@@ -6,7 +7,7 @@ function ContainerWrapper(props) {
 
         <Container >
             <Row>
-                <Col>{props.children}</Col>
+                <Col className="content-container">{props.children}</Col>
             </Row>
         </Container>
 
