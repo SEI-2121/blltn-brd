@@ -1,7 +1,9 @@
 from rest_framework.serializers import HyperlinkedModelSerializer
 from rest_framework import serializers
-from .models import Link, Project, Screenshot, User
+from .models import Link, Project, Screenshot
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     projects = serializers.HyperlinkedRelatedField(view_name='project-detail',
@@ -9,7 +11,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'projects']
+        fields = ['id', 'username','projects', 'bio','profile_pic', 'location']
 
 class LinkSerializer(HyperlinkedModelSerializer):
 

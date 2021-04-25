@@ -2,22 +2,19 @@ import { Form, Button } from 'react-bootstrap';
 import React, { Component } from 'react';
 
 class NewProject extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             name: "",
             description: "",
             website: "",
             source: "",
             technologiesUsed: "",
-            valid: true
         }
     }
 
     handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+        this.setState({[e.target.name]: e.target.value})
     }
 
     createProject = (e) => {
@@ -26,11 +23,14 @@ class NewProject extends Component {
             method: 'POST',
             mode: 'cors',
             headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify({ [e.target.name]: e.target.value })
+            body: JSON.stringify(this.state)
         };
-        fetch('https://blltn-brd.herokuapp.com/projects', requestOptions)
+        fetch('https://blltn-brd.herokuapp.com/projects/new', requestOptions)
             .then(response => response.json())
-            .then(data => this.setState({ [e.target.name]: e.target.value }))
+            .then(returnedProject => {
+                console.log(returnedProject)
+                this.props.history.push("/user/1")
+        });
     }
 
     render() {

@@ -9,21 +9,14 @@ class Signup extends Component {
             email: "",
             password: "",
             passwordConfirm: "",
+            bio: "",
+            profilePic: "",
+            location: "",
         }
     }
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
-    }
-
-    checkSignup = (e) => {
-        e.preventDefault();
-        if (this.state.passwordConfirm !== this.state.password) {
-            // this.setState({valid: false})
-            alert("Passwords do not match.")
-        } else {
-            this.createUser()
-        }
     }
 
     createUser = (e) => {
@@ -37,9 +30,9 @@ class Signup extends Component {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(this.state)
             };
-            fetch('https://blltn-brd.herokuapp.com/user', requestOptions)
+            fetch('https://blltn-brd.herokuapp.com/user/:id', requestOptions)
                 .then(response => response.json())
-                .then(data => console.log(data))
+                .then(createdUser => console.log(createdUser))
         }
     }
 
@@ -56,7 +49,18 @@ class Signup extends Component {
                         <br />
                         <Form.Control name="email" type="email" placeholder="johndoe@gmail.com" onChange={this.handleChange} />
                     </Form.Group>
-                    <br />
+                    <Form.Group controlId="bio">
+                        <Form.Label>BIO</Form.Label>
+                        <Form.Control name="bio" as="textarea" rows={3} placeholder="A first time developer and engineer" onChange={this.handleChange} />
+                    </Form.Group>
+                    <Form.Group controlId="profilePic">
+                        <Form.Label>PROFILE PICTURE URL</Form.Label>
+                        <Form.Control name="profilePic" type="text" placeholder="https://imgur.com/imageurl" onChange={this.handleChange} />
+                    </Form.Group>
+                    <Form.Group controlId="location">
+                        <Form.Label>LOCATION</Form.Label>
+                        <Form.Control name="location" type="text" placeholder="Los Angeles, LA" onChange={this.handleChange} />
+                    </Form.Group>
                     <Form.Group controlId="password">
                         <Form.Label>PASSWORD</Form.Label>
                         <br />
