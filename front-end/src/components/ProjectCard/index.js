@@ -10,7 +10,6 @@ export default class ProjectCard extends Component {
     return (
       <div>
         <Card style={{ width: "14em" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
             <Card.Title>Project Title</Card.Title>
             <Card.Text>

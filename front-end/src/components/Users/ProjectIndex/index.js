@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './style.css'
+
 import ProjectCard from '../../ProjectCard/index.js'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -8,12 +8,13 @@ import Navbar from 'react-bootstrap/Navbar'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import './style.css'
 
 export default class ProjectIndex extends Component {
   render() {
     return (
       <div>
-        <Container>
+        <Container className="proj-cont">
           <Row>
             <Col>
               <Navbar justify="true" bg="light" expand="sm">
@@ -25,7 +26,7 @@ export default class ProjectIndex extends Component {
               </Navbar>
             </Col>
           </Row>
-          <Row>
+          <Row className="card-row">
             <Col className="card"><ProjectCard /></Col>
             <Col className="card"><ProjectCard /></Col>
             <Col className="card"><ProjectCard /></Col>
