@@ -33,7 +33,6 @@ export default class ProjectDetail extends Component {
               </Row>
             </Col>
             <Col>
-              <Row className="bio">Bio</Row>
               <Row className="projectContainer">
                 <h1>Project Name</h1>
           <p>
@@ -43,6 +42,7 @@ export default class ProjectDetail extends Component {
             doloremque sint corporis expedita aspernatur quia?{" "}
           </p>
           <Link to="/user/testingpath">Web URL</Link>
+          <br/>
           <Link to="/user/testingpath">Source Code</Link>
           <ul>
             Tech Used
