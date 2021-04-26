@@ -19,7 +19,10 @@ export default class UserDetail extends Component {
             <Row className="social"><LinkTree /></Row>
           </Col>
           <Col>
-            <Row className="bio">Bio</Row>
+            <Row className="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+            fugiat architecto, distinctio esse labore reiciendis obcaecati
+            necessitatibus aperiam quas quae libero, non quis repudiandae
+            doloremque sint corporis expedita aspernatur quia?</Row>
             <Row className="projectContainer"><ProjectIndex /></Row>
           </Col>
         </Row>

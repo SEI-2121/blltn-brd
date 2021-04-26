@@ -7,13 +7,13 @@ import Card from 'react-bootstrap/Card'
 export default class LinkTree extends Component {
   render() {
     return (
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '30rem' }}>
         <Card.Header>Social Links</Card.Header>
         <ListGroup variant="flush">
-          <ListGroup.Item action href="#link1">Link 1</ListGroup.Item>
-          <ListGroup.Item action href="#link1">Link 2</ListGroup.Item>
-          <ListGroup.Item action href="#link1">Link 3</ListGroup.Item>
-          <ListGroup.Item action href="#link1">Link 4</ListGroup.Item>
+          <ListGroup.Item action href="#link1">Handle@Twitter</ListGroup.Item>
+          <ListGroup.Item action href="#link1">Handle@Github</ListGroup.Item>
+          <ListGroup.Item action href="#link1">Handle@LinkedIn</ListGroup.Item>
+          <ListGroup.Item action href="#link1">Handle@Discord</ListGroup.Item>
         </ListGroup>
       </Card>
     )

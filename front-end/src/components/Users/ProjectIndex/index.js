@@ -16,11 +16,11 @@ export default class ProjectIndex extends Component {
         <Container>
           <Row>
             <Col>
-              <Navbar bg="light" expand="sm">
+              <Navbar justify="true" bg="light" expand="sm">
                 <Navbar.Brand href="#home">Search My Projects</Navbar.Brand>
                 <Form inline>
-                  <FormControl type="text" placeholder="Project Name" className="mr-sm-2" />
-                  <Button variant="outline-success">Search</Button>
+                  <FormControl size="sm" type="text" placeholder="Project Name" className="mr-sm-2" />
+                  <Button size="sm" variant="outline-success">Search</Button>
                 </Form>
               </Navbar>
             </Col>
