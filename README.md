@@ -25,19 +25,19 @@ Changing the way people think about porfolio websites. Spark the revolution!
     - [Authentication](#authentication)
     - [Routes Available](#routes-available)
 
-##Installation
+## Installation
 
 Information and instructions on setting up a development enviornment can be found in the [wiki](https://github.com/SEI-2121/blltn-brd/wiki).
 
-##Deployment
+## Deployment
 
 For information on Netify deployment see the [wiki @ Netify](https://github.com/SEI-2121/blltn-brd/wiki)
 
 For Heroku deployment see the [wiki @ Heroku Url](https://github.com/SEI-2121/blltn-brd/wiki)
 
-##Front-end
+## Front-end
 
-###Technologies Used
+### Technologies Used
 
 - [ReactJS](https://reactjs.org/)
 - [React-bootstrap](https://react-bootstrap.github.io/)
