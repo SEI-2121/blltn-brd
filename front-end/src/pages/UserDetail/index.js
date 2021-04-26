@@ -14,12 +14,15 @@ export default class UserDetail extends Component {
 
       <Container className="userContainer">
         <Row>
-          <Col>
+          <Col xs={3}>
             <Row className="userCard"><UserCard /></Row>
             <Row className="social"><LinkTree /></Row>
           </Col>
-          <Col>
-            <Row className="bio">Bio</Row>
+          <Col xs={9}>
+            <Row className="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
+            fugiat architecto, distinctio esse labore reiciendis obcaecati
+            necessitatibus aperiam quas quae libero, non quis repudiandae
+            doloremque sint corporis expedita aspernatur quia?</Row>
             <Row className="projectContainer"><ProjectIndex /></Row>
           </Col>
         </Row>

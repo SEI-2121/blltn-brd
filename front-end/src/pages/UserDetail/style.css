@@ -1,25 +1,5 @@
-.nav {
-  border: 3px solid black;
-}
-
-.userContainer {
-  border: 3px solid orange;
-  width: 25%;
-  float: left;
-}
-
-.userCard {
-  border: 3px solid red;
-}
-
-.social {
-  border: 3px solid blue;
-}
-
 .bio {
-  border: 3px solid green;
+  padding: 2em 1em;
 }
 
-.projectContainer {
-  border: 3px solid coral;
-}
+
